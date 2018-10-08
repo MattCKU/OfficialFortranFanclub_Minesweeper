@@ -8,9 +8,11 @@ from tkinter import *
 class matchgui:
     def __init__(self):
         self.if_win=False
-        global root
         root = tk.Tk()
-        button = tk.Button(root, text="Start")
+        chances = 10
+        self.chances = chances
+        """label2 = tk.Label(root, textvariable=self.chances)"""
+        self.label = tk.Label(root, text="Chances: "+str(self.chances))
         root.title("Welcome to the Matching game!")
 
         self.parent = root
@@ -24,7 +26,9 @@ class matchgui:
         self.setupboard()
 
 
-        button.grid(row=2, column=2)
+
+        self.label.grid(row=2, column=2)
+        """label2.grid(row=2, column=3)"""
         root.mainloop()
 
     def setupboard(self):
@@ -49,8 +53,6 @@ class matchgui:
                     messagebox.showinfo(title='SUCCESS!', message='You win! You cam back to minesweeper ')
                     self.if_win=True
                     root.destroy()
-                """else:
-                    messagebox.showinfo(title='FAIL!!', message='You lose! Game Over! ')"""
 
             else:
                 self.parent.after(300, self.cover, row, column, x, y)
@@ -59,6 +61,10 @@ class matchgui:
     def cover(self, x1, y1, x2, y2):
         self.buttons[x1][y1].config(text='', state=tk.NORMAL)
         self.buttons[x2][y2].config(text='', state=tk.NORMAL)
+        self.chances -= 1
+        self.label['text'] = "Chances: "+str(self.chances)
+        if self.chances == 0:
+            messagebox.showinfo(title='FAIL!!', message='You lose! Game Over! ')
     def get_if_win(self):
         return self.if_win
 
