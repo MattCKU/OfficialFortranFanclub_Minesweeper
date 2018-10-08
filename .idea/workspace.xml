@@ -61,7 +61,6 @@
       <change beforePath="$PROJECT_DIR$/Documentation/latex/namespaces.tex" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/latex/namespaces.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Documentation/latex/namespacesweeper___u_i.tex" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/latex/namespacesweeper___u_i.tex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Documentation/latex/refman.tex" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/latex/refman.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mini_games/TicTacToe.py" beforeDir="false" afterPath="$PROJECT_DIR$/mini_games/TicTacToe.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,26 +120,26 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="SimpleMiniGame" value="1" />
-          <entry key="py" value="3" />
+          <entry key="py" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="2" />
-          <entry key="Scratch" value="1" />
+          <entry key="Python" value="4" />
+          <entry key="Scratch" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2127" />
-          <entry key="txt" value="45" />
+          <entry key="py" value="2129" />
+          <entry key="txt" value="109" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="45" />
-          <entry key="Python" value="2126" />
+          <entry key="PLAIN_TEXT" value="109" />
+          <entry key="Python" value="2128" />
           <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
@@ -161,22 +160,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mini_games/TicTacToe.py">
+        <entry file="file://$PROJECT_DIR$/sweeper_UI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4580">
-              <caret line="229" column="57" selection-start-line="229" selection-start-column="57" selection-end-line="229" selection-end-column="57" />
+            <state relative-caret-position="700">
+              <caret line="232" column="75" selection-start-line="232" selection-start-column="75" selection-end-line="232" selection-end-column="75" />
               <folding>
-                <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#63#72#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mini_games/SimpleMiniGame">
+        <entry file="file://$PROJECT_DIR$/mini_games/TicTacToe.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="120">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -220,11 +222,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="150" />
-    <option name="y" value="34" />
-    <option name="width" value="1440" />
-    <option name="height" value="832" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1274" />
+    <option name="width" value="1292" />
+    <option name="height" value="1406" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -1051,50 +1052,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.TicTacToe">
-    <configuration name="TicTacToe" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="OfficialFortranFanclub_Minesweeper" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\Bennett_PC\AppData\Local\Programs\Python\Python37\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mini_games" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mini_games/TicTacToe.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python">
-      <module name="OfficialFortranFanclub_Minesweeper" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$PROJECT_DIR$/../untitled/venv/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/matchgui.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="executive" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="OfficialFortranFanclub_Minesweeper" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -1102,9 +1060,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\Bennett_PC\AppData\Local\Programs\Python\Python37\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/executive.py" />
@@ -1116,14 +1074,8 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Python.Unnamed" />
-      <item itemvalue="Python.TicTacToe" />
-      <item itemvalue="Python.executive" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.TicTacToe" />
         <item itemvalue="Python.executive" />
       </list>
     </recent_temporary>
@@ -1146,20 +1098,27 @@
       <option name="project" value="LOCAL" />
       <updated>1538961943720</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="General Documentation and comments completed.">
+      <created>1538966124909</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1538966124909</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
+    <frame x="1274" y="0" width="1292" height="1406" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2746257" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23285486" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.19266771" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1941824" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39937598" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1184,7 +1143,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated/Added more Documentation comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated/Added more Documentation comments" />
+    <MESSAGE value="General Documentation and comments completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="General Documentation and comments completed." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/matchgame.py" />
@@ -1192,6 +1152,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="986">
           <caret line="58" column="10" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="10" />
+          <folding>
+            <element signature="e#72#85#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1211,13 +1174,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sweeper_UI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
-          <caret line="246" selection-start-line="246" selection-end-line="246" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mini_games/SimpleMiniGame">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -1227,8 +1183,8 @@
     </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2020">
-          <caret line="101" selection-start-line="101" selection-end-line="106" selection-end-column="11" />
+        <state relative-caret-position="-660">
+          <caret line="98" column="22" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
@@ -1237,10 +1193,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mini_games/TicTacToe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4580">
-          <caret line="229" column="57" selection-start-line="229" selection-start-column="57" selection-end-line="229" selection-end-column="57" />
+        <state relative-caret-position="120">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sweeper_UI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="232" column="75" selection-start-line="232" selection-start-column="75" selection-end-line="232" selection-end-column="75" />
+          <folding>
+            <element signature="e#63#72#0" expanded="true" />
           </folding>
         </state>
       </provider>

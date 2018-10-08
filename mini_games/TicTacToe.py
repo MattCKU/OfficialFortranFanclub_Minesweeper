@@ -1,3 +1,8 @@
+"""
+Idea for Game logic
+https://inventwithpython.com/chapter10.html
+Chapter 10 (TIC TAC TOE) from AL Swegigart MAking Games with Python and Pygame
+"""
 from tkinter import *
 import random as rand
 import copy
