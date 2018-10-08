@@ -23,11 +23,8 @@ Tile_size = GameB_Size / 3
 class TicTacToe(Tk):
 
     def __init__(self):
-        """ @pre    Board traits defined above method, canvas,board,
-            and gamestates are defined here for external use in methods
-            @post   Once the canvas, board, copy_board and screen are
-            defined the game call reference the same entity.
-        """
+        root = self
+        self.if_win=False
         Tk.__init__(self)
         self.canvas = Canvas(height=GameB_Size, width=GameB_Size, bg=Color_background)
         self.canvas.pack()
@@ -38,21 +35,13 @@ class TicTacToe(Tk):
         self.board = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
         self.copy_board = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
         self.first_time = TRUE
+        root.mainloop()
 
     def start_screen(self):
-        """ @pre    Clears the screen, introduces welcome screen
-            @post   No changes are made anywhere
-            @return Screen
-        """
         self.canvas.delete('all')
         self.canvas.create_text(int(GameB_Size/2), int(GameB_Size/2), text='Second Chance', fill='RED', font=('Arial', int(-GameB_Size/10)))
 
     def new_board(self):
-        """ @pre    Clears the screen, then prints
-            a new screen of Canvas tiles
-            @post   No changes are made anywhere
-            @return Screen
-        """
         self.canvas.delete('all')
         self.board = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
@@ -61,12 +50,6 @@ class TicTacToe(Tk):
             self.canvas.create_line(0, Tile_size*n, GameB_Size, Tile_size*n, width=4, fill=Color_border)  # horizontal grid border
 
     def click(self, event):
-        """ @pre    Takes a left click from a user and transforms
-            the user input into a coordinate to be used to
-            determine gamestates and actions.
-            @post   No changes are made anywhere
-            @return None
-        """
         x = self.pixel_to_grid(event.x)
         y = self.pixel_to_grid(event.y)
 
@@ -106,7 +89,6 @@ class TicTacToe(Tk):
             for i in range(0, 3):
                 for j in range(0, 3):
                     n = n + 1
-                    print(n)
                     self.copy_board = copy.deepcopy(self.board)
                     if self.is_free(self.copy_board, i, j):
                         if not_moved:
@@ -129,6 +111,7 @@ class TicTacToe(Tk):
                                 self.draw_ai(w, q)
                                 self.board[w][q] = 1
                                 not_moved = FALSE
+
                             else:
                                 fake = (0, 2)
                                 k = rand.choice(fake)
@@ -141,8 +124,7 @@ class TicTacToe(Tk):
                                     self.draw_ai(k, l)
                                     self.board[k][l] = 1
                                     not_moved = FALSE
-
-                    else:  #Right corner fix, when user clicks on first move
+                    else:
                         if not_moved and n == 9:
                             fake = (0, 2)
                             k = rand.choice(fake)
@@ -170,10 +152,10 @@ class TicTacToe(Tk):
     def draw_ai(self, x_pos, y_pos):
         x = self.grid_to_pixel(x_pos)
         y = self.grid_to_pixel(y_pos)
-        c = 1.42 * Tile_size / 2 * Letter_size
+        c = 1.45 * Tile_size / 2 * Letter_size
 
         self.canvas.create_oval(x - c, y - c, x + c, y + c, fill=Color_o, outline="") # Outer Circle
-        self.canvas.create_oval(x - c / 1.3, y - c / 1.3, x + c / 1.3, y + c / 1.3, fill=Color_background, outline="") # Inner Circle
+        self.canvas.create_oval(x - c / 1.45, y - c / 1.45, x + c / 1.45, y + c / 1.45, fill=Color_background, outline="") # Inner Circle
 
     def delete_tile(self, x, y):
         x_pos = self.grid_to_pixel(x)
@@ -208,9 +190,9 @@ class TicTacToe(Tk):
     
     def is_gameover(self, outcome):
         if outcome == 'Player WINS':  # Player loses Pysweeper and TicTacToe
-            return TRUE
+            self.if_win=True
         elif outcome == 'O WINS':  # Go back to Pysweeper
-            return FALSE
+            self.if_win=False
 
     def game_result(self, outcome):
         self.canvas.delete('all')
@@ -218,20 +200,27 @@ class TicTacToe(Tk):
         if outcome == 'Player WINS':  # Therefore go back to Pysweeper
             status = 'You survived!'
             status_color = Color_x
-            self.is_gameover(TRUE)
+            self.if_win = True
+            self.is_gameover(True)
+
 
         elif outcome == 'AI WINS':  # Player loses Pysweeper and TicTacToe
             status = 'AI WINS!'
             status_color = Color_o
-            self.is_gameover(FALSE)
+            self.if_win = False
+            self.is_gameover(False)
+
 
         elif outcome == 'DRAW':  # Therefore benefit of doubt go back to Pysweeper
             status = 'Draw! (Barely Survived)'
             status_color = 'GREY'
-            self.is_gameover(FALSE)
+            self.if_win = True
+            self.is_gameover(True)
+
 
         self.canvas.create_rectangle(0, 0, GameB_Size, GameB_Size, fill=status_color, outline='')
         self.canvas.create_text(int(GameB_Size / 2), int(GameB_Size / 2), text=status, fill='white', font=('Times', int(-GameB_Size / 12), 'bold'))
+        self.destroy()
 
     def grid_to_pixel(self, grid_pos):
         pixel_pos = grid_pos * Tile_size + Tile_size / 2
@@ -247,8 +236,8 @@ class TicTacToe(Tk):
     def exit(self):
         self.destroy()
 
-def main():
-    root = TicTacToe()
-    root.mainloop()
-
-main()
+#def main():
+ #   root = TicTacToe()
+ #   root.mainloop()
+#
+#main()
