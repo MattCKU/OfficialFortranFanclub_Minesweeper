@@ -23,6 +23,11 @@ Tile_size = GameB_Size / 3
 class TicTacToe(Tk):
 
     def __init__(self):
+        """ @pre    Board traits defined above method, canvas,board,
+            and gamestates are defined here for external use in methods
+            @post   Once the canvas, board, copy_board and screen are
+            defined the game call reference the same entity.
+        """
         root = self
         self.if_win=False
         Tk.__init__(self)
@@ -38,10 +43,19 @@ class TicTacToe(Tk):
         root.mainloop()
 
     def start_screen(self):
+        """ @pre    Clears the screen, introduces welcome screen
+            @post   No changes are made anywhere
+            @return Screen
+        """
         self.canvas.delete('all')
         self.canvas.create_text(int(GameB_Size/2), int(GameB_Size/2), text='Second Chance', fill='RED', font=('Arial', int(-GameB_Size/10)))
 
     def new_board(self):
+        """ @pre    Clears the screen, then prints
+            a new screen of Canvas tiles
+            @post   No changes are made anywhere
+            @return Screen
+        """
         self.canvas.delete('all')
         self.board = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
@@ -50,6 +64,12 @@ class TicTacToe(Tk):
             self.canvas.create_line(0, Tile_size*n, GameB_Size, Tile_size*n, width=4, fill=Color_border)  # horizontal grid border
 
     def click(self, event):
+        """ @pre    Takes a left click from a user and transforms
+            the user input into a coordinate to be used to
+            determine gamestates and actions.
+            @post   No changes are made anywhere
+            @return None
+        """
         x = self.pixel_to_grid(event.x)
         y = self.pixel_to_grid(event.y)
 
@@ -79,6 +99,12 @@ class TicTacToe(Tk):
                     self.gamestate = State_player
 
     def new_move(self, x_pos, y_pos):
+        """ @pre    Takes x & y coordinates and acts upon the location
+            by sending the the parameters to the method to draw_player to
+            print the move to the canvas. The board is then updated with the new value.
+            @post   Called in click() to update user moves
+            @return None
+        """
         self.draw_player(x_pos, y_pos)
         self.board[x_pos][y_pos] = 2
 
@@ -203,20 +229,17 @@ class TicTacToe(Tk):
             self.if_win = True
             self.is_gameover(True)
 
-
         elif outcome == 'AI WINS':  # Player loses Pysweeper and TicTacToe
             status = 'AI WINS!'
             status_color = Color_o
             self.if_win = False
             self.is_gameover(False)
 
-
         elif outcome == 'DRAW':  # Therefore benefit of doubt go back to Pysweeper
             status = 'Draw! (Barely Survived)'
             status_color = 'GREY'
             self.if_win = True
             self.is_gameover(True)
-
 
         self.canvas.create_rectangle(0, 0, GameB_Size, GameB_Size, fill=status_color, outline='')
         self.canvas.create_text(int(GameB_Size / 2), int(GameB_Size / 2), text=status, fill='white', font=('Times', int(-GameB_Size / 12), 'bold'))
