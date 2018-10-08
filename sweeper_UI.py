@@ -13,6 +13,7 @@ import random
 from matchgui import matchgui
 import tkinter as tk
 from tkinter import *
+from mini_games.TicTacToe import *
 #from mini_games.SimpleMiniGame import *
 
 
@@ -150,7 +151,7 @@ class minesweeper_gui:
         @return none
         """
         cheat_mode=False
-        num_mini_games=2
+        num_mini_games=3
 
 
         pygame.init()
@@ -237,10 +238,13 @@ class minesweeper_gui:
                                                 #matching game
                                                 matchingGame=matchgui()
                                                 mini_game_win=matchingGame.if_win
-                                                print(mini_game_win)
+
                                             elif(mini_game_select==3):
                                                 #Tic tac toe
                                                 print("tic tac toe")
+                                                tic_tac_toe=TicTacToe()
+                                                mini_game_win = tic_tac_toe.if_win
+
                                             if(mini_game_win):
                                                 #Won miniGame
                                                 mine_hit=False;
@@ -382,6 +386,6 @@ def simple_game(Surface):
                 mx, my = pygame.mouse.get_pos()
                 if mx <= 120 and my <=60:
                     return True
-                elif ms >120 and my<=60:
+                elif mx >120 and my<=60:
                     return False
         pygame.display.update()
