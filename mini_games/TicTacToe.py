@@ -101,7 +101,7 @@ class TicTacToe(Tk):
     def new_move(self, x_pos, y_pos):
         """ @pre    Takes x & y coordinates and acts upon the location
             by sending the the parameters to the method to draw_player to
-            print the move to the canvas. The board is then updated with the new value.
+            print the move to the canvas (USER MOVE). The board is then updated with the new value.
             @post   Called in click() to update user moves
             @return None
         """
@@ -109,6 +109,12 @@ class TicTacToe(Tk):
         self.board[x_pos][y_pos] = 2
 
     def new_move_ai(self):
+        """ @pre    Takes x & y coordinates and acts upon the location by sending
+            the the parameters to the method to draw_ai toprint the move to
+            the canvas (AI MOVE). The board is then updated with the new value. Handles AI LOGIC
+            @post   Called in click() to update computer moves
+            @return None
+        """
         not_moved = TRUE
         n = 0
         if not_moved:
@@ -165,33 +171,44 @@ class TicTacToe(Tk):
                                 not_moved = FALSE
 
     def draw_player(self, x_pos, y_pos):
+        """ @pre    Take in x and y position and create an X on the canvas
+            tile at that position an X letter is printed to the canvas
+            @post   Called in new_move() when the user clicks a tile.
+            @return Updated Canvas/Screen
+        """
         x = self.grid_to_pixel(x_pos)
         y = self.grid_to_pixel(y_pos)
         c = Tile_size/2*Letter_size
 
-        self.canvas.create_line(x-c, y-c, x+c, y+c, width=Char_max_size, fill=Color_x) # Left Line (starting at the top)
-        self.canvas.create_line(x+c, y-c, x-c, y+c, width=Char_max_size, fill=Color_x) # Right Line (starting at the top)
+        self.canvas.create_line(x-c, y-c, x+c, y+c, width=Char_max_size, fill=Color_x)  # Left Line (starting at the top)
+        self.canvas.create_line(x+c, y-c, x-c, y+c, width=Char_max_size, fill=Color_x)  # Right Line (starting at the top)
 
     def is_free(self, type, x, y):
+        """ @pre    Take in either the board of the deepcopy of the board (copy_board)
+            and check the value if the canvas/board is empty at that location.
+            @post   Called in new_move() when the user clicks a tile.
+            @return returns a TRUE or FALSE if the value is an empty tile
+        """
         return type[x][y] == 0
 
     def draw_ai(self, x_pos, y_pos):
+        """ @pre    Take in x and y position and create an
+            X on the Canvas tile at that position.
+            @post   Called in new_move_ai() when the computer decides a tile to combat the user.
+            @return Updated Canvas/Screen
+        """
         x = self.grid_to_pixel(x_pos)
         y = self.grid_to_pixel(y_pos)
         c = 1.45 * Tile_size / 2 * Letter_size
 
         self.canvas.create_oval(x - c, y - c, x + c, y + c, fill=Color_o, outline="") # Outer Circle
-        self.canvas.create_oval(x - c / 1.45, y - c / 1.45, x + c / 1.45, y + c / 1.45, fill=Color_background, outline="") # Inner Circle
-
-    def delete_tile(self, x, y):
-        x_pos = self.grid_to_pixel(x)
-        y_pos = self.grid_to_pixel(y)
-        c = 1.45 * Tile_size / 2 * Letter_size
-
-        self.canvas.create_oval(x_pos, y_pos, 0, 0, fill=Color_o, outline="") # Outer Circle
-        self.canvas.create_oval(x_pos, y_pos, 0, 0, fill=Color_background, outline="") # Inner Circle
+        self.canvas.create_oval(x - c / 1.45, y - c / 1.45, x + c / 1.45, y + c / 1.45, fill=Color_background, outline="")  # Inner Circle
 
     def redeemed(self, type, value):
+        """ @pre    Take in the board (either original or deepcopy) and the player value (AI or Player)
+            @post   Called in click() to check gamestates and called in new_move_ai to check for a win (AI LOGIC)
+            @return Returns a TRUE or FALSE (TRUE for a WIN, FALSE for a LOSS or DRAW)
+        """
         for y in range(3):
             if type[y] == [value, value, value]: # Horizontal Win
                 return True
@@ -208,6 +225,10 @@ class TicTacToe(Tk):
         return False
 
     def tie(self):
+        """ @pre    No input parameters needed,
+            @post   Checks if user ties with the computer
+            @return Returns a TRUE or FALSE (TRUE = TIE) 
+        """
         for row in self.board:
             if 0 in row:
                 return False
@@ -215,48 +236,69 @@ class TicTacToe(Tk):
         return True
     
     def is_gameover(self, outcome):
+        """ @pre    Takes in an event/state from game_result and sets the Bool for a win to true
+            @post   Called in game_result take the final gamestates and finalize the result.
+            @return Returns a TRUE or FALSE (TRUE for a WIN, FALSE for a LOSS or DRAW)
+        """
         if outcome == 'Player WINS':  # Player loses Pysweeper and TicTacToe
-            self.if_win=True
+            self.if_win = True
         elif outcome == 'O WINS':  # Go back to Pysweeper
-            self.if_win=False
+            self.if_win = False
 
     def game_result(self, outcome):
+        """ @pre    Handles an outcome from the click method, prints to the game screen,
+            and sends the result to the is_gameover method.
+            @post   Called in click() to clear the screen, take in gamestates and print the message to the screen.
+            Sends the result to a value sumbitting method is_gameover.
+            @return Updates Finish screen.
+        """
         self.canvas.delete('all')
 
         if outcome == 'Player WINS':  # Therefore go back to Pysweeper
             status = 'You survived!'
             status_color = Color_x
-            self.if_win = True
             self.is_gameover(True)
 
         elif outcome == 'AI WINS':  # Player loses Pysweeper and TicTacToe
             status = 'AI WINS!'
             status_color = Color_o
-            self.if_win = False
             self.is_gameover(False)
 
         elif outcome == 'DRAW':  # Therefore benefit of doubt go back to Pysweeper
             status = 'Draw! (Barely Survived)'
             status_color = 'GREY'
-            self.if_win = True
             self.is_gameover(True)
 
         self.canvas.create_rectangle(0, 0, GameB_Size, GameB_Size, fill=status_color, outline='')
         self.canvas.create_text(int(GameB_Size / 2), int(GameB_Size / 2), text=status, fill='white', font=('Times', int(-GameB_Size / 12), 'bold'))
-        self.destroy()
+        self.exit()
 
     def grid_to_pixel(self, grid_pos):
+        """ @pre    Takes in a grid position and converts the position to a pixel location on the canvas.
+            @post   Called in draw_player and draw_ai methods to convert to pixel locations on the canvas.
+            @return Returns the pixel conversion value (int/number)
+        """
         pixel_pos = grid_pos * Tile_size + Tile_size / 2
+
         return pixel_pos
 
     def pixel_to_grid(self, pixel_pos):
+        """ @pre    Takes the click position and converts it to a
+            grid position to easily relate to the board/tile.
+            @post   Called in click() to convert the pixel position to a grid value.
+            @return Returns the grid location (int/number)
+        """
         if pixel_pos >= GameB_Size:
             pixel_pos = GameB_Size - 1
-
         grid_pos = int(pixel_pos / Tile_size)
+
         return grid_pos
 
     def exit(self):
+        """ @pre    Deletes a binding
+            @post   Loacted in the self initialization method, used in game_result
+            @return None
+        """
         self.destroy()
 
 #def main():
