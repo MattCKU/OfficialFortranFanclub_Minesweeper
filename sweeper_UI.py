@@ -372,7 +372,7 @@ def start_game(rows,cols,mines):
 def simple_game(Surface):
     temp = CountdownClock(2)
     pygame.font.init()
-    font = pygame.font.SysFont('Comic Sans', 22)
+    font = pygame.font.SysFont('Comic Sans', 60)
     mini_game_size = Surface.get_width(), Surface.get_height()
     win_img=pygame.image.load("img/win_tile.png")
     lose_img=pygame.image.load("img/lose_tile.png")
@@ -383,8 +383,12 @@ def simple_game(Surface):
     Surface.blit(gameSurface, (0,0))
     pygame.display.flip()
     while 1:
+        blank = pygame.Rect(100, 120, 120, 120)
+        blankrect = pygame.draw.rect(Surface, (0, 0, 0), blank, 1)
+        Surface.fill((0,0,0), blankrect)
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+
+            if (event.type == pygame.QUIT) or ((2 - temp.getTime()) < 0):
                 pygame.quit()
                 sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN and event.button==1:
@@ -393,7 +397,7 @@ def simple_game(Surface):
                     return True
                 elif mx >120 and my<=60:
                     return False
-        textsurface = font.render(str(int(10 - temp.getTime())), False, (255,255,255))
-        blank = pygame.rect(Surface,(0,0,0),)
-        Surface.blit(textsurface,(100,100))
+        textsurface = font.render(str(int(3 - temp.getTime())), False, (255,255,255))
+
+        Surface.blit(textsurface,(100,120))
         pygame.display.update()
