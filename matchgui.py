@@ -6,10 +6,15 @@ from tkinter import messagebox
 from tkinter import *
 
 class matchgui:
+    """constructor to define the variable and buttons(cells)"""
     def __init__(self):
         self.if_win=False
+        global root
         root = tk.Tk()
-        button = tk.Button(root, text="Start")
+        chances = 10
+        self.chances = chances
+        """label2 = tk.Label(root, textvariable=self.chances)"""
+        self.label = tk.Label(root, text="Chances: "+str(self.chances))
         root.title("Welcome to the Matching game!")
 
         self.parent = root
@@ -23,9 +28,12 @@ class matchgui:
         self.setupboard()
 
 
-        button.grid(row=2, column=2)
+
+        self.label.grid(row=2, column=2)
+        """label2.grid(row=2, column=3)"""
         root.mainloop()
 
+    """set up a 2 by 5 board for user"""
     def setupboard(self):
         self.board = list('XXYYZZAABB')
         random.shuffle(self.board)
@@ -33,7 +41,7 @@ class matchgui:
         for row in self.buttons:
             for button in row:
                 button.config(text='', state=tk.NORMAL)
-
+    """To check if two card is the same or not"""
     def select(self, row, column):
         self.buttons[row][column].config(text=self.board[row][column])
         self.buttons[row][column].config(state=tk.DISABLED)
@@ -48,16 +56,20 @@ class matchgui:
                     messagebox.showinfo(title='SUCCESS!', message='You win! You cam back to minesweeper ')
                     self.if_win=True
                     root.destroy()
-                """else:
-                    messagebox.showinfo(title='FAIL!!', message='You lose! Game Over! ')"""
 
             else:
                 self.parent.after(300, self.cover, row, column, x, y)
             self.state = False
-
+    """if two cells doesn't match, you lose one chance
+        when chances gets to 0, you lose!"""
     def cover(self, x1, y1, x2, y2):
         self.buttons[x1][y1].config(text='', state=tk.NORMAL)
         self.buttons[x2][y2].config(text='', state=tk.NORMAL)
+        self.chances -= 1
+        self.label['text'] = "Chances: "+str(self.chances)
+        if self.chances == 0:
+            messagebox.showinfo(title='FAIL!!', message='You lose! Game Over! ')
+    """win in matching game can go back to the minesweeper"""
     def get_if_win(self):
         return self.if_win
 

@@ -69,9 +69,8 @@ class TicTacToe(Tk):
             self.canvas.create_line(0, Tile_size*n, GameB_Size, Tile_size*n, width=4, fill=Color_border)  # horizontal grid border
 
     def click(self, event):
-        """ @pre    Takes a left click from a user and transforms
-            the user input into a coordinate to be used to
-            determine gamestates and actions.
+        """ @pre    Takes a left click from a user and transforms the user
+            input into a coordinate to be used to determine gamestates and actions.
             @post   No changes are made anywhere
             @return None
         """
@@ -262,16 +261,19 @@ class TicTacToe(Tk):
         if outcome == 'Player WINS':  # Therefore go back to Pysweeper
             status = 'You survived!'
             status_color = Color_x
+            self.if_win = True
             self.is_gameover(True)
 
         elif outcome == 'AI WINS':  # Player loses Pysweeper and TicTacToe
             status = 'AI WINS!'
             status_color = Color_o
+            self.if_win = False
             self.is_gameover(False)
 
         elif outcome == 'DRAW':  # Therefore benefit of doubt go back to Pysweeper
             status = 'Draw! (Barely Survived)'
             status_color = 'GREY'
+            self.if_win = True
             self.is_gameover(True)
 
         self.canvas.create_rectangle(0, 0, GameB_Size, GameB_Size, fill=status_color, outline='')
@@ -305,9 +307,3 @@ class TicTacToe(Tk):
             @return None
         """
         self.destroy()
-
-#def main():
- #   root = TicTacToe()
- #   root.mainloop()
-#
-#main()

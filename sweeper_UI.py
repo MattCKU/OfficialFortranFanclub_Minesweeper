@@ -230,7 +230,6 @@ class minesweeper_gui:
                                         mine_hit = reveal(gB,cell.y,cell.x)
 
                                         if(mine_hit):
-                                            #TODO make several mini games
                                             mini_game_select=random.randint(1, num_mini_games)
                                             if(mini_game_select == 1):
                                                 #simple game
