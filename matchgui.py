@@ -8,6 +8,7 @@ from tkinter import *
 class matchgui:
     def __init__(self):
         self.if_win=False
+        global root
         root = tk.Tk()
         chances = 10
         self.chances = chances
