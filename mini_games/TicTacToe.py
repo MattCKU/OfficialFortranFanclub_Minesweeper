@@ -69,9 +69,8 @@ class TicTacToe(Tk):
             self.canvas.create_line(0, Tile_size*n, GameB_Size, Tile_size*n, width=4, fill=Color_border)  # horizontal grid border
 
     def click(self, event):
-        """ @pre    Takes a left click from a user and transforms
-            the user input into a coordinate to be used to
-            determine gamestates and actions.
+        """ @pre    Takes a left click from a user and transforms the user
+            input into a coordinate to be used to determine gamestates and actions.
             @post   No changes are made anywhere
             @return None
         """
@@ -308,9 +307,3 @@ class TicTacToe(Tk):
             @return None
         """
         self.destroy()
-
-#def main():
- #   root = TicTacToe()
- #   root.mainloop()
-#
-#main()
