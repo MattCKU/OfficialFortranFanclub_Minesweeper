@@ -89,7 +89,6 @@ class TicTacToe(Tk):
             for i in range(0, 3):
                 for j in range(0, 3):
                     n = n + 1
-                    print(n)
                     self.copy_board = copy.deepcopy(self.board)
                     if self.is_free(self.copy_board, i, j):
                         if not_moved:
@@ -201,20 +200,27 @@ class TicTacToe(Tk):
         if outcome == 'Player WINS':  # Therefore go back to Pysweeper
             status = 'You survived!'
             status_color = Color_x
+            self.if_win = True
             self.is_gameover(True)
+
 
         elif outcome == 'AI WINS':  # Player loses Pysweeper and TicTacToe
             status = 'AI WINS!'
             status_color = Color_o
+            self.if_win = False
             self.is_gameover(False)
+
 
         elif outcome == 'DRAW':  # Therefore benefit of doubt go back to Pysweeper
             status = 'Draw! (Barely Survived)'
             status_color = 'GREY'
+            self.if_win = True
             self.is_gameover(True)
+
 
         self.canvas.create_rectangle(0, 0, GameB_Size, GameB_Size, fill=status_color, outline='')
         self.canvas.create_text(int(GameB_Size / 2), int(GameB_Size / 2), text=status, fill='white', font=('Times', int(-GameB_Size / 12), 'bold'))
+        self.destroy()
 
     def grid_to_pixel(self, grid_pos):
         pixel_pos = grid_pos * Tile_size + Tile_size / 2

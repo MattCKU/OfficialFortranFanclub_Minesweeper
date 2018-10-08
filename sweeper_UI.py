@@ -151,7 +151,7 @@ class minesweeper_gui:
         @return none
         """
         cheat_mode=False
-        num_mini_games=2
+        num_mini_games=3
 
 
         pygame.init()
@@ -231,7 +231,6 @@ class minesweeper_gui:
                                         if(mine_hit):
                                             #TODO make several mini games
                                             mini_game_select=random.randint(1, num_mini_games)
-                                            mini_game_select=3
                                             if(mini_game_select == 1):
                                                 #simple game
                                                 mini_game_win=simple_game(gameDisplay);
