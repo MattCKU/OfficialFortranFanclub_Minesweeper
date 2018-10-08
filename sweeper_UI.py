@@ -231,8 +231,7 @@ class minesweeper_gui:
 
                                         if(mine_hit):
                                             #TODO make several mini games
-                                            #mini_game_select=random.randint(1, num_mini_games)
-                                            mini_game_select = 1
+                                            mini_game_select=random.randint(1, num_mini_games)
                                             if(mini_game_select == 1):
                                                 #simple game
                                                 mini_game_win=simple_game(gameDisplay);
