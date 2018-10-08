@@ -3,5 +3,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="sweeper_UI.ms_buttons",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classsweeper___u_i_1_1ms__buttons.html"];
+  Node0 [label="Cell.Cell",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cell_1_1_cell.html"];
 }

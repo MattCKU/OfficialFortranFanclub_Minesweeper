@@ -3,22 +3,27 @@
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classsweeper___u_i_1_1cell__button}{cell\+\_\+button}
+class \mbox{\hyperlink{classsweeper___u_i_1_1cell__button}{cell\+\_\+button}}
 \item 
-class \hyperlink{classsweeper___u_i_1_1gui__button}{gui\+\_\+button}
+class \mbox{\hyperlink{classsweeper___u_i_1_1gui__button}{gui\+\_\+button}}
 \item 
-class \hyperlink{classsweeper___u_i_1_1minesweeper__gui}{minesweeper\+\_\+gui}
+class \mbox{\hyperlink{classsweeper___u_i_1_1minesweeper__gui}{minesweeper\+\_\+gui}}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-def \hyperlink{namespacesweeper___u_i_a60d3b69c6e596a8cc72c88a3fd159926}{quit\+\_\+game} ()
+def \mbox{\hyperlink{namespacesweeper___u_i_a60d3b69c6e596a8cc72c88a3fd159926}{quit\+\_\+game}} ()
 \item 
-def \hyperlink{namespacesweeper___u_i_a1d2372a72b38f4c14cfd981325b3ee83}{reveal} (gB, row, col)
+def \mbox{\hyperlink{namespacesweeper___u_i_a1d2372a72b38f4c14cfd981325b3ee83}{reveal}} (gB, row, col)
 \item 
-def \hyperlink{namespacesweeper___u_i_a0b6997d23bebdf719e9ba3f83bb89b1a}{update\+\_\+display} (display, gB, cell\+\_\+list, flagged\+\_\+count)
+def \mbox{\hyperlink{namespacesweeper___u_i_ac5f95a0e13b131052e1fbe163a142ff5}{update\+\_\+display}} (display, gB, cell\+\_\+list, flagged\+\_\+count, flags\+\_\+button, quit\+\_\+button)
 \item 
-def \hyperlink{namespacesweeper___u_i_a6d328451ee39123c0cb2af67b6a79379}{start\+\_\+game} (rows, cols, mines)
+def \mbox{\hyperlink{namespacesweeper___u_i_a892a833cb13683da856095b3f50e5d0c}{update\+\_\+display\+\_\+cheat}} (display, gB, cell\+\_\+list, flagged\+\_\+count, flags\+\_\+button, quit\+\_\+button)
+\item 
+def \mbox{\hyperlink{namespacesweeper___u_i_a6d328451ee39123c0cb2af67b6a79379}{start\+\_\+game}} (rows, cols, mines)
+\item 
+\mbox{\Hypertarget{namespacesweeper___u_i_ab27d6803daa643375e2d14d431a86198}\label{namespacesweeper___u_i_ab27d6803daa643375e2d14d431a86198}} 
+def {\bfseries simple\+\_\+game} (Surface)
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -99,11 +104,7 @@ dictionary {\bfseries cell\+\_\+contents}
 @post game is quit
 @return none
 \end{DoxyVerb}
- 
-
-Definition at line 118 of file sweeper\+\_\+\+U\+I.\+py.
-
-\mbox{\Hypertarget{namespacesweeper___u_i_a1d2372a72b38f4c14cfd981325b3ee83}\label{namespacesweeper___u_i_a1d2372a72b38f4c14cfd981325b3ee83}} 
+ \mbox{\Hypertarget{namespacesweeper___u_i_a1d2372a72b38f4c14cfd981325b3ee83}\label{namespacesweeper___u_i_a1d2372a72b38f4c14cfd981325b3ee83}} 
 \index{sweeper\+\_\+\+UI@{sweeper\+\_\+\+UI}!reveal@{reveal}}
 \index{reveal@{reveal}!sweeper\+\_\+\+UI@{sweeper\+\_\+\+UI}}
 \subsubsection{\texorpdfstring{reveal()}{reveal()}}
@@ -113,11 +114,7 @@ Definition at line 118 of file sweeper\+\_\+\+U\+I.\+py.
 @post recursively change cell isflagged value
 @return True if mine is hit
 \end{DoxyVerb}
- 
-
-Definition at line 127 of file sweeper\+\_\+\+U\+I.\+py.
-
-\mbox{\Hypertarget{namespacesweeper___u_i_a6d328451ee39123c0cb2af67b6a79379}\label{namespacesweeper___u_i_a6d328451ee39123c0cb2af67b6a79379}} 
+ \mbox{\Hypertarget{namespacesweeper___u_i_a6d328451ee39123c0cb2af67b6a79379}\label{namespacesweeper___u_i_a6d328451ee39123c0cb2af67b6a79379}} 
 \index{sweeper\+\_\+\+UI@{sweeper\+\_\+\+UI}!start\+\_\+game@{start\+\_\+game}}
 \index{start\+\_\+game@{start\+\_\+game}!sweeper\+\_\+\+UI@{sweeper\+\_\+\+UI}}
 \subsubsection{\texorpdfstring{start\+\_\+game()}{start\_game()}}
@@ -127,25 +124,27 @@ Definition at line 127 of file sweeper\+\_\+\+U\+I.\+py.
 @post runs gui_start to begin game loop
 @return none
 \end{DoxyVerb}
- 
-
-Definition at line 295 of file sweeper\+\_\+\+U\+I.\+py.
-
-\mbox{\Hypertarget{namespacesweeper___u_i_a0b6997d23bebdf719e9ba3f83bb89b1a}\label{namespacesweeper___u_i_a0b6997d23bebdf719e9ba3f83bb89b1a}} 
+ \mbox{\Hypertarget{namespacesweeper___u_i_ac5f95a0e13b131052e1fbe163a142ff5}\label{namespacesweeper___u_i_ac5f95a0e13b131052e1fbe163a142ff5}} 
 \index{sweeper\+\_\+\+UI@{sweeper\+\_\+\+UI}!update\+\_\+display@{update\+\_\+display}}
 \index{update\+\_\+display@{update\+\_\+display}!sweeper\+\_\+\+UI@{sweeper\+\_\+\+UI}}
 \subsubsection{\texorpdfstring{update\+\_\+display()}{update\_display()}}
-{\footnotesize\ttfamily def sweeper\+\_\+\+U\+I.\+update\+\_\+display (\begin{DoxyParamCaption}\item[{}]{display,  }\item[{}]{gB,  }\item[{}]{cell\+\_\+list,  }\item[{}]{flagged\+\_\+count }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily def sweeper\+\_\+\+U\+I.\+update\+\_\+display (\begin{DoxyParamCaption}\item[{}]{display,  }\item[{}]{gB,  }\item[{}]{cell\+\_\+list,  }\item[{}]{flagged\+\_\+count,  }\item[{}]{flags\+\_\+button,  }\item[{}]{quit\+\_\+button }\end{DoxyParamCaption})}
 
 \begin{DoxyVerb}@pre take display, game board, cell 2d array, and flagged count inputs
 @post update each game cell
 @return flagged count for game win checking
 \end{DoxyVerb}
+ \mbox{\Hypertarget{namespacesweeper___u_i_a892a833cb13683da856095b3f50e5d0c}\label{namespacesweeper___u_i_a892a833cb13683da856095b3f50e5d0c}} 
+\index{sweeper\+\_\+\+UI@{sweeper\+\_\+\+UI}!update\+\_\+display\+\_\+cheat@{update\+\_\+display\+\_\+cheat}}
+\index{update\+\_\+display\+\_\+cheat@{update\+\_\+display\+\_\+cheat}!sweeper\+\_\+\+UI@{sweeper\+\_\+\+UI}}
+\subsubsection{\texorpdfstring{update\+\_\+display\+\_\+cheat()}{update\_display\_cheat()}}
+{\footnotesize\ttfamily def sweeper\+\_\+\+U\+I.\+update\+\_\+display\+\_\+cheat (\begin{DoxyParamCaption}\item[{}]{display,  }\item[{}]{gB,  }\item[{}]{cell\+\_\+list,  }\item[{}]{flagged\+\_\+count,  }\item[{}]{flags\+\_\+button,  }\item[{}]{quit\+\_\+button }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}@pre take display, game board, cell 2d array, and flagged count inputs
+@post update each game cell displaying cheat info
+@return flagged count for game win checking
+\end{DoxyVerb}
  
-
-Definition at line 273 of file sweeper\+\_\+\+U\+I.\+py.
-
-
 
 \subsection{Variable Documentation}
 \mbox{\Hypertarget{namespacesweeper___u_i_a7d0e80394d61cdf349f0f82925f988a1}\label{namespacesweeper___u_i_a7d0e80394d61cdf349f0f82925f988a1}} 
@@ -169,7 +168,3 @@ Definition at line 273 of file sweeper\+\_\+\+U\+I.\+py.
 11     \textcolor{stringliteral}{'-'} : revealed\_image
 12 \}
 \end{DoxyCode}
-
-
-Definition at line 40 of file sweeper\+\_\+\+U\+I.\+py.
-

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['place_5fmines',['place_mines',['../namespacegamefunctions.html#acf46cabff90f0d1e06c4aadc3865292a',1,'gamefunctions']]],
-  ['place_5fsurface',['place_surface',['../namespacegamefunctions.html#a109b9daf1366f60cec625c3ff29fd7dd',1,'gamefunctions']]]
+  ['matchgui',['matchgui',['../classmatchgui_1_1matchgui.html',1,'matchgui']]],
+  ['minesweeper_5fgui',['minesweeper_gui',['../classsweeper___u_i_1_1minesweeper__gui.html',1,'sweeper_UI']]]
 ];
