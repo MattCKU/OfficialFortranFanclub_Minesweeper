@@ -14,6 +14,7 @@ from matchgui import matchgui
 import tkinter as tk
 from tkinter import *
 from mini_games.TicTacToe import *
+from CountdownClock import CountdownClock
 #from mini_games.SimpleMiniGame import *
 
 
@@ -230,7 +231,8 @@ class minesweeper_gui:
 
                                         if(mine_hit):
                                             #TODO make several mini games
-                                            mini_game_select=random.randint(1, num_mini_games)
+                                            #mini_game_select=random.randint(1, num_mini_games)
+                                            mini_game_select = 1
                                             if(mini_game_select == 1):
                                                 #simple game
                                                 mini_game_win=simple_game(gameDisplay);
@@ -368,6 +370,9 @@ def start_game(rows,cols,mines):
     ms.gui_start(gB,rows, cols, mines)
 
 def simple_game(Surface):
+    temp = CountdownClock(2)
+    pygame.font.init()
+    font = pygame.font.SysFont('Comic Sans', 22)
     mini_game_size = Surface.get_width(), Surface.get_height()
     win_img=pygame.image.load("img/win_tile.png")
     lose_img=pygame.image.load("img/lose_tile.png")
@@ -388,4 +393,7 @@ def simple_game(Surface):
                     return True
                 elif mx >120 and my<=60:
                     return False
+        textsurface = font.render(str(int(10 - temp.getTime())), False, (255,255,255))
+        blank = pygame.rect(Surface,(0,0,0),)
+        Surface.blit(textsurface,(100,100))
         pygame.display.update()
