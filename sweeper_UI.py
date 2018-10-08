@@ -13,6 +13,7 @@ import random
 from matchgui import matchgui
 import tkinter as tk
 from tkinter import *
+from mini_games.TicTacToe import *
 #from mini_games.SimpleMiniGame import *
 
 
@@ -230,6 +231,7 @@ class minesweeper_gui:
                                         if(mine_hit):
                                             #TODO make several mini games
                                             mini_game_select=random.randint(1, num_mini_games)
+                                            mini_game_select=3
                                             if(mini_game_select == 1):
                                                 #simple game
                                                 mini_game_win=simple_game(gameDisplay);
@@ -237,10 +239,13 @@ class minesweeper_gui:
                                                 #matching game
                                                 matchingGame=matchgui()
                                                 mini_game_win=matchingGame.if_win
-                                                print(mini_game_win)
+
                                             elif(mini_game_select==3):
                                                 #Tic tac toe
                                                 print("tic tac toe")
+                                                tic_tac_toe=TicTacToe()
+                                                mini_game_win = tic_tac_toe.if_win
+
                                             if(mini_game_win):
                                                 #Won miniGame
                                                 mine_hit=False;

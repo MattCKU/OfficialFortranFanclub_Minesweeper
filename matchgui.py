@@ -8,7 +8,6 @@ from tkinter import *
 class matchgui:
     def __init__(self):
         self.if_win=False
-        global root
         root = tk.Tk()
         button = tk.Button(root, text="Start")
         root.title("Welcome to the Matching game!")

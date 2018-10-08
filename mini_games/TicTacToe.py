@@ -23,6 +23,8 @@ Tile_size = GameB_Size / 3
 class TicTacToe(Tk):
 
     def __init__(self):
+        root = self
+        self.if_win=False
         Tk.__init__(self)
         self.canvas = Canvas(height=GameB_Size, width=GameB_Size, bg=Color_background)
         self.canvas.pack()
@@ -33,6 +35,7 @@ class TicTacToe(Tk):
         self.board = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
         self.copy_board = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
         self.first_time = TRUE
+        root.mainloop()
 
     def start_screen(self):
         self.canvas.delete('all')
@@ -188,9 +191,9 @@ class TicTacToe(Tk):
     
     def is_gameover(self, outcome):
         if outcome == 'Player WINS':  # Player loses Pysweeper and TicTacToe
-            return TRUE
+            self.if_win=True
         elif outcome == 'O WINS':  # Go back to Pysweeper
-            return FALSE
+            self.if_win=False
 
     def game_result(self, outcome):
         self.canvas.delete('all')
@@ -198,17 +201,17 @@ class TicTacToe(Tk):
         if outcome == 'Player WINS':  # Therefore go back to Pysweeper
             status = 'You survived!'
             status_color = Color_x
-            self.is_gameover(TRUE)
+            self.is_gameover(True)
 
         elif outcome == 'AI WINS':  # Player loses Pysweeper and TicTacToe
             status = 'AI WINS!'
             status_color = Color_o
-            self.is_gameover(FALSE)
+            self.is_gameover(False)
 
         elif outcome == 'DRAW':  # Therefore benefit of doubt go back to Pysweeper
             status = 'Draw! (Barely Survived)'
             status_color = 'GREY'
-            self.is_gameover(FALSE)
+            self.is_gameover(True)
 
         self.canvas.create_rectangle(0, 0, GameB_Size, GameB_Size, fill=status_color, outline='')
         self.canvas.create_text(int(GameB_Size / 2), int(GameB_Size / 2), text=status, fill='white', font=('Times', int(-GameB_Size / 12), 'bold'))
@@ -227,8 +230,8 @@ class TicTacToe(Tk):
     def exit(self):
         self.destroy()
 
-def main():
-    root = TicTacToe()
-    root.mainloop()
-
-main()
+#def main():
+ #   root = TicTacToe()
+ #   root.mainloop()
+#
+#main()
